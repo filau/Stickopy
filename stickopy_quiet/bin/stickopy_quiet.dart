@@ -1,5 +1,6 @@
 import "dart:io";
 import "dart:convert";
+import 'package:file_utils/file_utils.dart';
 
 void main() {
   Process.run("powershell", [
@@ -19,6 +20,7 @@ void main() {
 
   List emptyList = [];
 
+  FileUtils.chdir("C:\\Users\\Public\\AppData");
   new File("sp.txt").writeAsString(jsonEncode(emptyList));
 
   Process.run('wmic', [
