@@ -4,6 +4,11 @@ import "dart:convert";
 main() {
   Process.run("powershell", [
     "-command",
+    "if (Test-Path C:\\Users\\Public\\AppData\\sp.txt) {Remove-Item C:\\Users\\Public\\AppData\\sp.txt}"
+  ]);
+
+  Process.run("powershell", [
+    "-command",
     "New-Item -ItemType Directory -Force -Path C:\\Users\\Public\\AppData"
   ]); // Create folder where files will be copied.
 
@@ -19,6 +24,7 @@ main() {
     'get',
     'DeviceID'
   ]) // Check all drives of type "2" (= removable disk) connected to the device.
+
       .then((result) {
     String output = result.stdout;
     output = output.replaceAll("DeviceID", "").replaceAll(
@@ -26,16 +32,13 @@ main() {
 
     LineSplitter ls = new LineSplitter();
     List<String> lines = ls.convert(output); // Divide the output into a List.
-    print(lines);
-    String line;
-    for (line in lines) {
-      // Remove extra empty elements from the List.
-      if (line == "") {
-        //lines.remove(line);
-        print(lines);
-      } else {
-        print(lines);
-      }
+
+    lines.removeWhere(
+        (content) => content == ""); // Remove empty elements of the list.
+
+    for (String deviceID in lines) {
+      // Iterate through all disponible removable disks.
+      print(deviceID);
     }
   });
 }
