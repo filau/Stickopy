@@ -1,0 +1,10 @@
+name: stickopy-noisy
+description: The “noisy” version of Stickopy. You can copy any thumb drive connected to the PC, with a message box indicating that the copy is running, along with an alert box at the end.
+version: 0.1.0
+homepage: https://github.com/FLA-Coding/Stickopy
+
+environment:
+  sdk: '>=2.8.1 <3.0.0'
+
+dependencies:
+  file_utils: '>=0.1.4'

