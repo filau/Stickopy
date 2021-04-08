@@ -1,7 +1,6 @@
 import "dart:io";
 import "dart:convert";
 import "dart:async";
-import "package:path/path.dart" as p;
 import "global_var.dart" as glb;
 
 main() {
