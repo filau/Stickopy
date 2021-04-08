@@ -1,6 +1,6 @@
 # Stickopy
 
-This little piece of software, developped in [Dart](https://dart.dev/), allows you to copy the whole content of a USB drive automatically (when plugged), quickly and quietly.  
+This little piece of software, developed in [Dart](https://dart.dev/), allows you to copy the whole content of a USB drive automatically (when plugged), quickly and quietly.  
   
 ## How to compile?
 See [COMPILING.md](https://github.com/FLA-Coding/Stickopy/blob/main/COMPILING.md).

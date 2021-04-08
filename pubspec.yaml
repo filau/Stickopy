@@ -1,5 +1,5 @@
 name: stickopy
-description: This little piece of software, developped in Dart, allows you to copy the whole content of a USB drive automatically (when plugged), quickly and quietly.
+description: This little piece of software, developed in Dart, allows you to copy the whole content of a USB drive automatically (when plugged), quickly and quietly.
 version: 1.0.0
 homepage: https://github.com/FLA-Coding/Stickopy
 
