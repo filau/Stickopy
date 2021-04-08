@@ -99,8 +99,6 @@ periodic(gl) {
                 String deviceID_simple = deviceID.replaceAll(":", "");
                 Process.run("powershell", [
                   // Copy the content of the drive.
-                  //"-WindowStyle",
-                  //"Hidden",
                   "-command",
                   "xcopy /E /I " +
                       deviceID +
