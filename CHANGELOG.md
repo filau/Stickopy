@@ -1,5 +1,6 @@
 # Changelog
 
-## 0.1.0
+## 1.0.0
 
-* This program is currently in development.
+* Stickopy is working the intended way
+* A console is briefly show when the app starts up but it is hidden very quickly.
