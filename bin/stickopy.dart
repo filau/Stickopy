@@ -92,7 +92,6 @@ periodic(gl) {
                   to_copy = false;
                 }
               }
-              print(to_copy);
               if (to_copy) {
                 // Do the following if the USB has to be copied.
                 String deviceID_simple = deviceID.replaceAll(":", "");
@@ -101,7 +100,8 @@ periodic(gl) {
                   "/E",
                   "/I",
                   deviceID + "\\",
-                  "C:\\Users\\%USERNAME%\\Desktop" +
+                  Platform.environment['UserProfile'] +
+                      "\\Desktop\\" +
                       deviceID_simple +
                       "_drive_" +
                       "$current_timestamp"
