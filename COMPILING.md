@@ -2,7 +2,7 @@
 
 ## Requirements
 * the [Dart SDK](https://dart.dev/get-dart), with `dart2native` reachable in the PATH;
-* a PC runningWindows 7, 8, 8.1 or 10 (64 bits CPU required!).
+* a PC running Windows 7, 8, 8.1 or 10 (64 bits CPU required!).
 
 ## Steps
 * download the source code of the [latest version](https://github.com/FLA-Coding/Stickopy/releases/latest) of Stickopy and unzip it;
