@@ -6,8 +6,8 @@
 
 ## Steps
 * download the source code of the [latest version](https://github.com/FLA-Coding/Stickopy/releases/latest) of Stickopy and unzip it;
-* Open a Command Prompt in the source code folder;
-* Type:<br/>
+* open a Command Prompt in the source code folder;
+* type:<br/>
   ```dart2native bin\stickopy.dart -o stickopy.exe```&nbsp;&nbsp;.
 
 **An executable of *Stickopy* called** `stickopy.exe` **should be at the root of the source code.**
