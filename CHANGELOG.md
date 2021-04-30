@@ -2,7 +2,7 @@
 
 ## 1.1.0
 * Fixed a few minor bugs.
-* Add some console arguments (`help` and `license`):
+* Add some console arguments (`help`, `license` and `version`):
    * `help` (or  `--help`) displays the credits and the possible arguments;
    * `license` opens the GPL license (version 3), under which this software is distributed, in WordPad;
    * `version` displays the version of the software.
