@@ -1,9 +1,34 @@
+//  stickopy.dart
+
+//   Stickopy allows you to copy the whole content of a USB drive automatically
+// (when plugged), quickly and quietly.
+
+//   Copyright (C) 2021  Firmin Launay (FLA Coding)
+
+//   This program is free software: you can redistribute it and/or modify it under
+// the terms of the GNU General Public License as published by the Free Software
+// Foundation, either version 3 of the License, or (at your option) any later
+// version.
+
+//   This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+// FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+//   You should have received a copy of the GNU General Public License along with
+// this program.  If not, see <https://www.gnu.org/licenses/>.
+
 import "dart:io";
 import "dart:convert";
 import "dart:async";
 import "global_var.dart" as glb;
+import "arg_display.dart" as arg;
 
-main() {
+main(List<String> args) {
+  arg.ArgDisplay dispArg = new arg.ArgDisplay();
+  if (args.contains("license"))
+    return dispArg.license(); // Display license if the argument is passed.
+  else if (args.contains("help") || args.contains("--help"))
+    return dispArg.help(); // Display help if the argument is passed.
   Process.run(
       "powershell", ["-WindowStyle", "Hidden", "-command", "echo Stickopy"]);
 
@@ -73,7 +98,7 @@ periodic(gl) {
             List<String> output = ls.convert(result.stdout
                 .replaceAll(" ", "")); // Convert the output into a usable list.
             output.removeWhere((content) => content == "");
-            String size = null;
+            String size = "";
             for (String line in output) {
               if (line.contains("Sum")) {
                 // Select the important element of the list.
@@ -81,7 +106,7 @@ periodic(gl) {
                 break;
               }
             }
-            if (size != null) {
+            if (size != "") {
               size = size.replaceAll("Sum", "").replaceAll(":", "");
               int fileSize = int.parse(size); // Get a usable size.
 
@@ -103,7 +128,7 @@ periodic(gl) {
                   "xcopy /E /I " +
                       deviceID +
                       "\\ " +
-                      Platform.environment['UserProfile'] +
+                      Platform.environment['UserProfile']! +
                       "\\Desktop\\" +
                       deviceID_simple +
                       "_drive_" +

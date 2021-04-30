@@ -1,0 +1,2 @@
+# Ignore all the GPLv3 content
+bin/arg_display.dart linguist-detectable=false
