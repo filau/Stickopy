@@ -4,7 +4,8 @@
 * Fixed a few minor bugs.
 * Add some console arguments (`help` and `license`):
    * `help` (or  `--help`) displays the credits and the possible arguments;
-   * `license` opens the GPL license (version 3), under which this software is distributed, in WordPad.
+   * `license` opens the GPL license (version 3), under which this software is distributed, in WordPad;
+   * `version` displays the version of the software.
 
 ## 1.0.0
 

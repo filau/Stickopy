@@ -27,6 +27,8 @@ main(List<String> args) {
   arg.ArgDisplay dispArg = new arg.ArgDisplay();
   if (args.contains("license"))
     return dispArg.license(); // Display license if the argument is passed.
+  else if (args.contains("version"))
+    return dispArg.version();
   else if (args.contains("help") || args.contains("--help"))
     return dispArg.help(); // Display help if the argument is passed.
   Process.run(

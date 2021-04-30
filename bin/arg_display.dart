@@ -698,6 +698,8 @@ class ArgDisplay {
 
     Type `stickopy.exe license` to view the license (replace `stickopy.exe` by the path to the executable of Stickopy), or visit <https://www.gnu.org/licenses/>.
   """;
+  String versionText =
+      "Stickopy 1.1.0 Windows ${Platform.environment["PROCESSOR_ARCHITECTURE"]!.toLowerCase()}";
 
   void license() async {
     String location = Platform.environment["TEMP"]! + "\\GPLv3.txt";
@@ -707,5 +709,9 @@ class ArgDisplay {
 
   void help() {
     print(helpText);
+  }
+
+  void version() {
+    print(versionText);
   }
 }
